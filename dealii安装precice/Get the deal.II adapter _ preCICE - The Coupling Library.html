@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://precice.org/adapter-dealii-get.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use CMake to install deal.II and build the individual programs.">
+<meta name="keywords" content=" adapter, dealii, building">
+<meta name="theme-color" content="#0A76BB">
+<meta name="msapplication-square310x310logo" content="images/icon-310x310.png">
+
+<title>Get the deal.II adapter | preCICE - The Coupling Library</title>
+<link rel="alternate" type="application/rss+xml" title="" href="https://precice.org/feed.xml">
+
+<link rel="shortcut icon" href="https://precice.org/images/favicon.ico">
+<style class="anchorjs"></style><link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/syntax.css">
+<link rel="icon" sizes="192x192" href="https://precice.org/images/icon.png">
+<link rel="apple-touch-icon" sizes="310x310" href="https://precice.org/images/icon-310x310.png">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+<!-- Bootstrap -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Local CSS -->
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/modern-business.css">
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/customstyles.css">
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/customstyles-precice.css">
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/boxshadowproperties.css">
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/bookcover.css">
+<!-- Color styles -->
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/theme-precice.css">
+<!-- Styling for landing page -->
+
+
+<!-- Jquery, Ajax -->
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><style type="text/css" abt="234"></style>
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/jquery.cookie.min.js"></script>
+
+<!-- Anchor.js -->
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/anchor.min.js" integrity="sha256-m1eTvwEHwmsw4+XKF7BshClVJEPwTVycveNl0CS0Mkk=" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JavaScript (requires jquery) -->
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Local JS -->
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/jquery.navgoco.min.js"></script>
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/toc.js"></script>
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/customscripts.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- KaTeX -->
+<link rel="stylesheet" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer="" src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer="" src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+<!-- Algolia search -->
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/instantsearch.min.js"></script>
+<script src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="./Get the deal.II adapter _ preCICE - The Coupling Library_files/instantsearch-theme-algolia.min.css">
+
+<!-- QR code to retrieve printed page -->
+<style>
+@media print {
+    div.post-header:before {
+    	content: url('https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=https://precice.org/adapter-dealii-get.html&choe=UTF-8');
+        margin-top: -25px;
+        float: right;
+    }
+}
+</style>
+
+<!-- Plausible Analytics -->
+<script async="" defer="" data-domain="precice.org" src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/plausible.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    <script>
+        // wrap tables into a div to make them scrollable on small viewports
+        // https://getbootstrap.com/docs/3.4/css/#tables-responsive
+        $(document).ready(function() {
+            $('table').addClass('table');
+            $('table').wrap('<div class="table-responsive"></div>');
+        });
+    </script>
+    
+<script>//remove baidu search ad
+var _countAA = 0
+function doBBBd(){}
+doBBBd()
+document.addEventListener('keyup', function(){_countAA-=10;doBBBd()}, false)
+document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
+
+</script></head>
+<body data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+    <header>
+        <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://precice.org/index.html">
+            <span class="navbar-brand-icon">
+            <img class="navbar-brand-text" src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/preCICE_text_28px.svg" alt="preCICE"></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                
+                <!-- entries without drop-downs appear here -->
+
+                
+                
+
+                
+                
+                
+                
+                
+                <li><a href="https://precice.org/quickstart.html">Quickstart</a></li>
+                
+                
+                
+                
+                
+                <li class="active"><a href="https://precice.org/docs.html">Docs</a></li>
+                
+                
+                
+                
+                
+                <li><a href="https://precice.org/tutorials.html">Tutorials</a></li>
+                
+                
+                
+                
+                
+                <li><a href="https://precice.org/community.html">Community</a></li>
+                
+                
+                
+                
+                
+                <li><a href="https://precice.discourse.group/c/news" target="_blank" rel="noopener">Blog</a></li>
+                
+                
+                
+                
+                
+                <li><a href="https://precice.org/about.html">About</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <div id="search-input"><div class="ais-search-box" style="padding: 0.5em; margin-bottom: 0px; margin-left: 10px; margin-top: 0px; width: 20em; font-size: 0.8em; height: 50px; box-sizing: border-box;"><input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Search ..." role="textbox" spellcheck="false" type="text" value="" class="ais-search-box--input" style="padding-left: 10px; border-color: rgb(10, 118, 187);"><span class=""><div class="ais-search-box--powered-by" style="margin-top: -15px; padding-right: 5px;">
+  Search by
+  <a class="ais-search-box--powered-by-link" href="https://www.algolia.com/?utm_source=instantsearch.js&amp;utm_medium=website&amp;utm_content=precice.org&amp;utm_campaign=poweredby" target="_blank" style="padding: 0px; background-color: transparent; display: inline-block;">Algolia</a>
+</div></span><span class="ais-search-box--reset-wrapper" style="display: none;"><button type="reset" title="Clear the search query." class="ais-search-box--reset">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="100%" height="100%">
+    <path d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z" fill-rule="evenodd">
+    </path>
+  </svg>
+</button></span></div></div>
+                        <div id="search-results" style="display: none;"></div>
+                        <script>
+const algoliaSearch = instantsearch({
+  appId: 'I5M4FAJYBH',
+  apiKey: 'd6f8d2f113bc342ee3f42421d0153bad',
+  indexName: 'jekyll',
+  searchFunction: function(helper) {          // hide search result in init query
+    var searchResults = $('#search-results');
+    if (helper.state.query === '') {
+      searchResults.hide();
+      return;
+    }
+    helper.search();
+    searchResults.show();
+  }
+});
+
+const hitTemplate = function(hit) {
+  let date = '';
+  if (hit.date) {
+    date = moment.unix(hit.date).format('MMM D, YYYY');
+  }
+
+  let url = `${hit.url}#${hit.anchor}`;
+
+  const title = hit._highlightResult.title.value;
+
+  let breadcrumbs = '';
+  if (hit._highlightResult.headings) {
+    breadcrumbs = hit._highlightResult.headings.map(match => {
+      return `<span class="result-breadcrumb">${match.value}</span>`
+    }).join(' > ')
+  }
+
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="result-item">
+    <h2><a class="result-link" href="${url}">${title}</a></h2>
+    <a href="${url}" class="result-breadcrumbs">${breadcrumbs}</a>
+    <div class="result-snippet">${content}</div>
+    </div>
+  `;
+}
+
+algoliaSearch.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-input',
+    placeholder: 'Search ...',
+    poweredBy: true, // This is required if you're on the free Community plan
+    magnifier: false,
+    autofocus: false,
+    searchOnEnterKeyPressOnly: false,
+    reset: true
+  })
+);
+
+algoliaSearch.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-results',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+algoliaSearch.start();
+
+// Patch the style of the search input bar generated by the above script
+// The equivalent CSS is below, however, including <style> in <body> is against the W3C commandments
+// Chrome and Firefox had baby called scope, but it didn't make it
+// https://stackoverflow.com/questions/2830296/using-style-tags-in-the-body-with-other-html
+var elem = document.querySelector('.ais-search-box--powered-by');
+elem.style.marginTop = '-15px';
+elem.style.paddingRight = '5px';
+
+var elem = document.querySelector('.nav li a.ais-search-box--powered-by-link');
+elem.style.padding = '0';
+elem.style.backgroundColor = 'transparent';
+elem.style.display = "inline-block";
+
+var elem = document.querySelector('.ais-search-box--input');
+elem.style.paddingLeft = '10px';
+elem.style.borderColor = '#0A76BB';
+
+var elem = document.querySelector('.ais-search-box');
+elem.style.padding = '.5em';
+elem.style.marginBottom = '0px';
+elem.style.marginLeft = '10px';
+elem.style.marginTop = '0px';
+elem.style.width = '20em';
+elem.style.fontSize = '0.8em';
+elem.style.height = '50px';
+elem.style.boxSizing = 'border-box';
+
+/*<style type="text/css">
+.ais-search-box--powered-by {
+  margin-top: -15px;
+  padding-right: 5px;
+}
+.nav li a.ais-search-box--powered-by-link {
+  padding: 0;
+  background-color: transparent;
+  display: inline-block;
+}
+.ais-search-box--input {
+  padding-left: 10px;
+  border-color: #0A76BB;
+}
+.ais-search-box {
+  padding: .5em;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top: 0px;
+  width: 20em;
+  font-size: 0.8em;
+  box-sizing: border-box;
+  height: 50px;
+}
+</style>*/
+
+// some hacky JS to hide the search results until we move to docsearch (which is a true autocomplete-type search)
+document.addEventListener('mouseup', function(e) {
+  var results = document.getElementById('search-results');
+  if (!results.contains(e.target)) {
+    results.style.display = 'none';
+  }
+});
+document.addEventListener('mouseup', function(e) {
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if (input.contains(e.target)) {
+    results.style.display = 'block';
+  }
+});
+
+</script>
+                    </div>
+                    <!--end search-->
+                </li>
+                <li>
+                    <a class="no-icon nav-external" href="https://precice.discourse.group/" target="_blank" data-show-count="false" aria-label="Join the discourse community"><i class="fab fa-discourse"></i></a>
+                </li>
+                <li>
+                    <a class="no-icon nav-external" href="https://github.com/precice/precice" target="_blank" data-show-count="false" aria-label="Star precice/precice on GitHub"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a class="no-icon nav-external" href="https://twitter.com/preCICE_org" target="_blank" data-show-count="false" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a class="no-icon nav-external" href="https://www.youtube.com/c/preCICECoupling/" target="_blank" data-show-count="false" aria-label="Subscribe on Youtube"><i class="fab fa-youtube"></i></a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+    </header>
+    <main>
+        <!-- Page Content -->
+        <div class="container">
+            <div id="main">
+                <!-- Content Row -->
+                <div class="row">
+                    
+                    
+                    <!-- Sidebar Column -->
+                    <div class="col-md-3" id="tg-sb-sidebar">
+                        
+
+<ul id="mysidebar" class="nav affix">
+  <li class="sidebarTitle">Docs v2.3.0</li>
+  
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Fundamentals" href="https://precice.org/adapter-dealii-get.html#"><span></span>Fundamentals</a>
+    <ul data-index="0" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/docs.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Terminology" href="https://precice.org/fundamentals-terminology.html">Terminology</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Literature guide" href="https://precice.org/fundamentals-literature-guide.html">Literature guide</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Roadmap" href="https://precice.org/fundamentals-roadmap.html">Roadmap</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Installation" href="https://precice.org/adapter-dealii-get.html#"><span></span>Installation</a>
+    <ul data-index="1" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/installation-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="System packages" href="https://precice.org/installation-packages.html">System packages</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Using Spack" href="https://precice.org/installation-spack.html">Using Spack</a></li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Building from source" href="https://precice.org/adapter-dealii-get.html#"><span></span>Building from source</a>
+        <ul data-index="2" style="display: none;">
+          
+          
+          
+          <li><a title="Preparation" href="https://precice.org/installation-source-preparation.html">Preparation</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Dependencies" href="https://precice.org/installation-source-dependencies.html">Dependencies</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Configuration" href="https://precice.org/installation-source-configuration.html">Configuration</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Building" href="https://precice.org/installation-source-building.html">Building</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Testing" href="https://precice.org/installation-source-testing.html">Testing</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Installation" href="https://precice.org/installation-source-installation.html">Installation</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Advanced" href="https://precice.org/installation-source-advanced.html">Advanced</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Troubleshooting" href="https://precice.org/installation-source-troubleshooting.html">Troubleshooting</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Notes on CMake" href="https://precice.org/installation-source-cmake.html">Notes on CMake</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Linking to preCICE" href="https://precice.org/installation-linking.html">Linking to preCICE</a></li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Language bindings" href="https://precice.org/adapter-dealii-get.html#"><span></span>Language bindings</a>
+        <ul data-index="3" style="display: none;">
+          
+          
+          
+          <li><a title="Fortran" href="https://precice.org/installation-bindings-fortran.html">Fortran</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Python" href="https://precice.org/installation-bindings-python.html">Python</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Matlab" href="https://precice.org/installation-bindings-matlab.html">Matlab</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Special systems" href="https://precice.org/installation-special-systems.html">Special systems</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Demo Virtual Machine" href="https://precice.org/installation-vm.html">Demo Virtual Machine</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="preCICE distribution" href="https://precice.org/installation-distribution.html">preCICE distribution</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Configuration" href="https://precice.org/adapter-dealii-get.html#"><span></span>Configuration</a>
+    <ul data-index="4" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/configuration-overview.html">Overview</a></li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Basics" href="https://precice.org/adapter-dealii-get.html#"><span></span>Basics</a>
+        <ul data-index="5" style="display: none;">
+          
+          
+          
+          <li><a title="Introduction" href="https://precice.org/configuration-introduction.html">Introduction</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Mapping" href="https://precice.org/configuration-mapping.html">Mapping</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Communication" href="https://precice.org/configuration-communication.html">Communication</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Coupling scheme" href="https://precice.org/configuration-coupling.html">Coupling scheme</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Acceleration" href="https://precice.org/configuration-acceleration.html">Acceleration</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Mesh exchange example" href="https://precice.org/configuration-coupling-mesh-exchange.html">Mesh exchange example</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Advanced topics" href="https://precice.org/adapter-dealii-get.html#"><span></span>Advanced topics</a>
+        <ul data-index="6" style="display: none;">
+          
+          
+          
+          <li><a title="Multi coupling" href="https://precice.org/configuration-coupling-multi.html">Multi coupling</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Logging" href="https://precice.org/configuration-logging.html">Logging</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Export" href="https://precice.org/configuration-export.html">Export</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Action" href="https://precice.org/configuration-action.html">Action</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Watchpoint" href="https://precice.org/configuration-watchpoint.html">Watchpoint</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Watch integral" href="https://precice.org/configuration-watchintegral.html">Watch integral</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      
+      
+      
+      <li><a title="XML reference" href="https://precice.org/configuration-xml-reference.html">XML reference</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Tooling" href="https://precice.org/adapter-dealii-get.html#"><span></span>Tooling</a>
+    <ul data-index="7" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/tooling-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Built-in tooling" href="https://precice.org/tooling-builtin.html">Built-in tooling</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Config visualization" href="https://precice.org/tooling-config-visualization.html">Config visualization</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Performance analysis" href="https://precice.org/tooling-performance-analysis.html">Performance analysis</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="RBF shape calculator" href="https://precice.org/tooling-rbf-shape.html">RBF shape calculator</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li class="active">
+    <a title="Provided adapters" href="https://precice.org/adapter-dealii-get.html#"><span></span>Provided adapters</a>
+    <ul data-index="8">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/adapters-overview.html">Overview</a></li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="OpenFOAM" href="https://precice.org/adapter-dealii-get.html#"><span></span>OpenFOAM</a>
+        <ul data-index="9" style="display: none;">
+          
+          
+          
+          <li><a title="Overview" href="https://precice.org/adapter-openfoam-overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Get the adapter" href="https://precice.org/adapter-openfoam-get.html">Get the adapter</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Configuration" href="https://precice.org/adapter-openfoam-config.html">Configuration</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Extending" href="https://precice.org/adapter-openfoam-extend.html">Extending</a></li>
+          
+          
+          
+          
+          
+          <li><a title="OpenFOAM support" href="https://precice.org/adapter-openfoam-support.html">OpenFOAM support</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      <li class="subfolders active">
+        <a title="deal.II" href="https://precice.org/adapter-dealii-get.html#"><span></span>deal.II</a>
+        <ul data-index="10">
+          
+          
+          
+          <li><a title="Overview" href="https://precice.org/adapter-dealii-overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          <li class="active"><a title="Get the adapter" href="https://precice.org/adapter-dealii-get.html">Get the adapter</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Configuration" href="https://precice.org/adapter-dealii-configure.html">Configuration</a></li>
+          
+          
+          
+          
+          
+          <li><a title="For your own deal.II code" href="https://precice.org/adapter-dealii-own-project.html">For your own deal.II code</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Limitations and assumptions" href="https://precice.org/adapter-dealii-limitations.html">Limitations and assumptions</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Solver details" href="https://precice.org/adapter-dealii-solver-details.html">Solver details</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Coupling Meshes in deal.II" href="https://precice.org/adapter-dealii-coupling-meshes.html">Coupling Meshes in deal.II</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="CalculiX" href="https://precice.org/adapter-dealii-get.html#"><span></span>CalculiX</a>
+        <ul data-index="11" style="display: none;">
+          
+          
+          
+          <li><a title="Overview" href="https://precice.org/adapter-calculix-overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Get CalculiX" href="https://precice.org/adapter-calculix-get-calculix.html">Get CalculiX</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Get the adapter" href="https://precice.org/adapter-calculix-get-adapter.html">Get the adapter</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Build the adapter with PaStiX" href="https://precice.org/adapter-calculix-pastix-build.html">Build the adapter with PaStiX</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Configuration" href="https://precice.org/adapter-calculix-config.html">Configuration</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Troubleshooting" href="https://precice.org/adapter-calculix-troubleshooting.html">Troubleshooting</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Building on SuperMUC" href="https://precice.org/adapter-calculix-supermuc.html">Building on SuperMUC</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="SU2" href="https://precice.org/adapter-dealii-get.html#"><span></span>SU2</a>
+        <ul data-index="12" style="display: none;">
+          
+          
+          
+          <li><a title="Overview" href="https://precice.org/adapter-su2-overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Get the adapter" href="https://precice.org/adapter-su2-get.html">Get the adapter</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Configuration" href="https://precice.org/adapter-su2-configure.html">Configuration</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      
+      
+      
+      <li><a title="FEniCS" href="https://precice.org/adapter-fenics.html">FEniCS</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="code_aster" href="https://precice.org/adapter-code_aster.html">code_aster</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Nutils" href="https://precice.org/adapter-nutils.html">Nutils</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Couple your code" href="https://precice.org/adapter-dealii-get.html#"><span></span>Couple your code</a>
+    <ul data-index="13" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/couple-your-code-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Application programming interface" href="https://precice.org/couple-your-code-api.html">Application programming interface</a></li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Step by step" href="https://precice.org/adapter-dealii-get.html#"><span></span>Step by step</a>
+        <ul data-index="14" style="display: none;">
+          
+          
+          
+          <li><a title="Step 1 – Preparation" href="https://precice.org/couple-your-code-preparing-your-solver.html">Step 1 – Preparation</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 2 – Steering methods" href="https://precice.org/couple-your-code-steering-methods.html">Step 2 – Steering methods</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 3 – Mesh and data access" href="https://precice.org/couple-your-code-mesh-and-data-access.html">Step 3 – Mesh and data access</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 4 – Coupling flow" href="https://precice.org/couple-your-code-coupling-flow.html">Step 4 – Coupling flow</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 5 – Non-matching timestep sizes" href="https://precice.org/couple-your-code-timestep-sizes.html">Step 5 – Non-matching timestep sizes</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 6 – Implicit coupling" href="https://precice.org/couple-your-code-implicit-coupling.html">Step 6 – Implicit coupling</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 7 – Data initialization" href="https://precice.org/couple-your-code-initializing-coupling-data.html">Step 7 – Data initialization</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Step 8 – Mesh connectivity" href="https://precice.org/couple-your-code-defining-mesh-connectivity.html">Step 8 – Mesh connectivity</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      <li class="subfolders">
+        <a title="Advanced topics" href="https://precice.org/adapter-dealii-get.html#"><span></span>Advanced topics</a>
+        <ul data-index="15" style="display: none;">
+          
+          
+          
+          <li><a title="Adapter software engineering" href="https://precice.org/couple-your-code-adapter-software-engineering.html">Adapter software engineering</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Initialization in existing MPI environment" href="https://precice.org/couple-your-code-existing-mpi-environment.html">Initialization in existing MPI environment</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Dealing with moving meshes" href="https://precice.org/couple-your-code-moving-meshes.html">Dealing with moving meshes</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Dealing with FEM meshes" href="https://precice.org/couple-your-code-fem-meshes.html">Dealing with FEM meshes</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Dealing with distributed meshes" href="https://precice.org/couple-your-code-distributed-meshes.html">Dealing with distributed meshes</a></li>
+          
+          
+          
+          
+          
+          <li><a title="Direct access to received meshes" href="https://precice.org/couple-your-code-direct-access.html">Direct access to received meshes</a></li>
+          
+          
+          
+        </ul>
+      </li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Porting adapters from preCICE 1.x to 2.x" href="https://precice.org/couple-your-code-porting-adapters.html">Porting adapters from preCICE 1.x to 2.x</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Running simulations" href="https://precice.org/adapter-dealii-get.html#"><span></span>Running simulations</a>
+    <ul data-index="16" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/running-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Running locally" href="https://precice.org/running-simple.html">Running locally</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Distributed systems" href="https://precice.org/running-distributed.html">Distributed systems</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="SLURM sessions" href="https://precice.org/running-slurm.html">SLURM sessions</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Output files" href="https://precice.org/running-output-files.html">Output files</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Dev docs" href="https://precice.org/adapter-dealii-get.html#"><span></span>Dev docs</a>
+    <ul data-index="17" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/dev-docs-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="General coding conventions" href="https://precice.org/dev-docs-dev-conventions.html">General coding conventions</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Timings in preCICE" href="https://precice.org/dev-docs-dev-eventtimings.html">Timings in preCICE</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Logging" href="https://precice.org/dev-docs-dev-logging.html">Logging</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Optimization" href="https://precice.org/dev-docs-dev-optimization.html">Optimization</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Release workflow" href="https://precice.org/dev-docs-dev-release.html">Release workflow</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Running and writing tests" href="https://precice.org/dev-docs-dev-testing.html">Running and writing tests</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Tooling" href="https://precice.org/dev-docs-dev-tooling.html">Tooling</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Release strategy" href="https://precice.org/dev-docs-release-strategy.html">Release strategy</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Publication strategy" href="https://precice.org/dev-docs-publication-strategy.html">Publication strategy</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  <!-- Parent menu item has folderitems -->
+  <li>
+    <a title="Documentation meta" href="https://precice.org/adapter-dealii-get.html#"><span></span>Documentation meta</a>
+    <ul data-index="18" style="display: none;">
+      
+      
+      
+      <li><a title="Overview" href="https://precice.org/docs-meta-overview.html">Overview</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Migration guide" href="https://precice.org/docs-meta-migration-guide.html">Migration guide</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Cheatsheet" href="https://precice.org/docs-meta-cheatsheet.html">Cheatsheet</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Landing page" href="https://precice.org/docs-meta-landing-page.html">Landing page</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="PDF generation" href="https://precice.org/docs-meta-publish-to-pdf.html">PDF generation</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Common issues" href="https://precice.org/docs-meta-common-issues.html">Common issues</a></li>
+      
+      
+      
+      
+      
+      
+      <li><a title="Search" href="https://precice.org/docs-meta-search.html">Search</a></li>
+      
+      
+      
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  <!-- if you aren't using the accordion, uncomment this block:
+  <p class="external">
+  <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+  </p>
+  -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+                    </div>
+                    
+                    
+
+                    <!-- Content Column -->
+                    <div class="col-md-9" id="tg-sb-content">
+                        <div class="post-header">
+   <h1 class="post-title-main">Get the deal.II adapter</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    <div class="summary">
+        <!-- https://github.com/jekyll/jekyll/issues/3571 -->
+        Use CMake to install deal.II and build the individual programs.
+
+    </div>
+    
+
+    <div class="row">
+        <div class="col-md-10 col-sm-8">
+          
+          
+          
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+    $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers:  'h2,h3,h4'  });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"> <ul><li><a href="https://precice.org/adapter-dealii-get.html#get-dealii">Get deal.II</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#get-dealii" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a><ul><li><a href="https://precice.org/adapter-dealii-get.html#binary-packages">Binary packages</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#binary-packages" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li><li><a href="https://precice.org/adapter-dealii-get.html#building-from-source">Building from source</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#building-from-source" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li><li><a href="https://precice.org/adapter-dealii-get.html#advanced-building-in-production">Advanced: Building in production</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#advanced-building-in-production" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li></ul></li><li><a href="https://precice.org/adapter-dealii-get.html#get-precice">Get preCICE</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#get-precice" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li><li><a href="https://precice.org/adapter-dealii-get.html#build-the-adapter">Build the adapter</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#build-the-adapter" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a><ul><li><a href="https://precice.org/adapter-dealii-get.html#2d-vs-3d-simulations">2D vs 3D simulations</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#2d-vs-3d-simulations" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li><li><a href="https://precice.org/adapter-dealii-get.html#debug-vs-release-mode">Debug vs Release mode</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#debug-vs-release-mode" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li></ul></li><li><a href="https://precice.org/adapter-dealii-get.html#next-steps">Next steps</a><a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#next-steps" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></li></ul></div>
+
+          
+          
+        </div>
+
+        <div class="col-md-2 col-sm-4">
+            
+            
+                <div class="text-right">
+                    <a target="_blank" rel="noopener" href="https://github.com/precice/precice.github.io_future/edit/master/pages/docs/adapters/deal.II/adapter-dealii-get.md" class="btn btn-default githubEditButton" role="button"><i class="fab fa-github fa-lg"></i> Edit me</a>
+                </div>
+            
+            
+        </div>
+    </div>
+
+   <p>This adapter is a collection of examples of a deal.II solver adapted for preCICE. To build the adapter, we first need to get the deal.II and preCICE header files and libraries. Afterwards, we can build the adapter using CMake and we can run a tutorial.</p>
+
+<h2 id="get-dealii" class="clickable-header top-level-header">Get deal.II<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#get-dealii" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2><i class="icon-arrow-up back-to-top"> </i>
+
+<p>Building the adapter requires deal.II version 9.2 or greater. You can find all <a href="https://dealii.org/download.html">available download options on the deal.II website</a>.</p>
+
+<h3 id="binary-packages" class="clickable-header">Binary packages<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#binary-packages" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>deal.II is available in several Linux distributions. For example, if you are using Ubuntu, you can get the <a href="https://packages.ubuntu.com/search?keywords=libdeal.ii-dev"><code class="language-plaintext highlighter-rouge">libdeal.ii-dev</code></a> package (see also the <a href="https://launchpad.net/~ginggs/+archive/ubuntu/deal.ii-9.2.0-backports">backports ppa</a>):</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> 
+The adapter requires at least deal.II version 9.2 or greater and it depends on your Linux distribution, if the available version of the <code class="language-plaintext highlighter-rouge">libdeal.ii-dev</code> package is recent enough.
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>libdeal.ii-dev libdeal.ii-doc cmake make g++
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> 
+The package libdeal.ii-doc installs the deal.II own tutorials (‘steps’), which are not necessarily required for the dealii-adapter. However, they can be helpful in order to test the correct installation of the deal.II library. The following steps copy and test the <code class="language-plaintext highlighter-rouge">step-1</code> tutorial of deal.II:
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> <span class="nt">-r</span> /usr/share/doc/libdeal.ii-doc/examples/step-1 <span class="nb">.</span>
+<span class="nb">cd </span>step-1
+cmake <span class="nb">.</span>
+make run
+</code></pre></div></div>
+
+<h3 id="building-from-source" class="clickable-header">Building from source<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#building-from-source" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>Get the latest release from the <a href="https://github.com/dealii/dealii">deal.II repository</a> and build using CMake:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/dealii/dealii.git
+<span class="nb">mkdir </span>build
+<span class="nb">cd </span>build/
+
+cmake <span class="se">\</span>
+    <span class="nt">-D</span> <span class="nv">DEAL_II_WITH_UMFPACK</span><span class="o">=</span><span class="s2">"ON"</span> <span class="se">\</span>
+    <span class="nt">-D</span> <span class="nv">DEAL_II_WITH_THREADS</span><span class="o">=</span><span class="s2">"ON"</span> <span class="se">\</span>
+    <span class="nt">-D</span> <span class="nv">DEAL_II_COMPONENT_EXAMPLES</span><span class="o">=</span><span class="s2">"OFF"</span> <span class="se">\</span>
+    ../dealii
+
+make <span class="nt">-j</span> 4
+</code></pre></div></div>
+
+<p>The direct solvers in this examples require <code class="language-plaintext highlighter-rouge">UMFPACK</code>. The nonlinear-solver utilizes a shared-memory parallelization. We disable building the examples only to significantly reduce the building time and storage needs.</p>
+
+<h3 id="advanced-building-in-production" class="clickable-header">Advanced: Building in production<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#advanced-building-in-production" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>If you want to use deal.II in production, there may be several options you may want to tune. In this case, use ccmake or check the <a href="https://www.dealii.org/9.2.0/users/cmake_dealii.html">deal.II CMake documentation</a>. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="se">\</span>
+    <span class="nt">-D</span> <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span><span class="s2">"DebugRelease"</span> <span class="se">\</span>
+    <span class="nt">-D</span> <span class="nv">CMAKE_CXX_FLAGS</span><span class="o">=</span><span class="s2">"-march=native </span><span class="se">\</span><span class="s2">
+    -D DEAL_II_CXX_FLAGS_RELEASE="</span><span class="nt">-O3</span><span class="s2">" </span><span class="se">\</span><span class="s2">
+    -D DEAL_II_WITH_UMFPACK="</span>ON<span class="s2">" </span><span class="se">\</span><span class="s2">
+    -D DEAL_II_WITH_THREADS="</span>ON<span class="s2">" </span><span class="se">\</span><span class="s2">
+    -D DEAL_II_COMPONENT_EXAMPLES="</span>OFF<span class="s2">" </span><span class="se">\</span><span class="s2">
+    -D CMAKE_INSTALL_PREFIX=/path/install/dir </span><span class="se">\</span><span class="s2">
+    ../dealii
+
+make -j 4
+</span></code></pre></div></div>
+
+<p>Detailed installation instructions are given in the <a href="https://www.dealii.org/current/readme.html">installation section of the deal.II webpage</a>.</p>
+
+<h2 id="get-precice" class="clickable-header top-level-header">Get preCICE<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#get-precice" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2><i class="icon-arrow-up back-to-top"> </i>
+
+<p>Have a look at our <a href="https://precice.org/installation-overview.html">preCICE installation guide</a>.</p>
+
+<h2 id="build-the-adapter" class="clickable-header top-level-header">Build the adapter<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#build-the-adapter" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2><i class="icon-arrow-up back-to-top"> </i>
+
+<p>If you have deal.II and preCICE globally installed in your system and want to run a tutorial, building the adapter is as simple as <code class="language-plaintext highlighter-rouge">cmake . &amp;&amp; make</code>:</p>
+
+<ol>
+  <li>
+    <p>Clone the repository and naviagte to the top-level directory</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/precice/dealii-adapter.git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>dealii-adapter
+</code></pre></div>    </div>
+  </li>
+  <li>The solvers are compiled into a single executable. Configuration is carried out using <code class="language-plaintext highlighter-rouge">cmake</code>:
+    <ul>
+      <li>If you have deal.II and preCICE installed globally on your system:</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="nb">.</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>If you have deal.II and preCICE installed in a local directory:</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="nt">-DDEAL_II_DIR</span><span class="o">=</span>/path/to/deal.II <span class="nt">-DpreCICE_DIR</span><span class="o">=</span>/path/to/precice <span class="nb">.</span>
+</code></pre></div>    </div>
+
+    <p>where <code class="language-plaintext highlighter-rouge">*_DIR</code> points to your installation (not source) directory. This should be the same as the <code class="language-plaintext highlighter-rouge">CMAKE_INSTALL_PREFIX</code> you used when installing the respective library. If you have set either of these variables globally, you could skip it in the command above.</p>
+  </li>
+  <li>
+    <p>Run</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div>    </div>
+
+    <p>to build the adapter. This will generate the <code class="language-plaintext highlighter-rouge">elasticity</code> executable.</p>
+  </li>
+  <li>
+    <p>Ensure that the executable is run-time discoverable by adding it to your <code class="language-plaintext highlighter-rouge">PATH</code> variable, e.g. for bash</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/path/to/the/directory/containing/elasticity:</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span><span class="s2">"</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square"></i> <b>Tip:</b> 
+Our <a href="https://precice.org/tutorials.html">tutorials</a> include scripts (<code class="language-plaintext highlighter-rouge">run.sh</code>) in order to start individual cases. The deal.II adapter scripts accept an option <code class="language-plaintext highlighter-rouge">-e=&lt;executable_to_run&gt;</code> to locate the executable, in case it is not globally discoverable.
+</div>
+
+<h3 id="2d-vs-3d-simulations" class="clickable-header">2D vs 3D simulations<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#2d-vs-3d-simulations" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>By default, the adapter is built as a 2D example in release mode.
+If you want to run a 3D example (quasi 2D, meaning that the out-of-plane direction is clamped but we use real cells for the calculation), you can define this when configuring:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake <span class="nt">-DDIM</span><span class="o">=</span>3 <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Note that you need to run <code class="language-plaintext highlighter-rouge">make distclean</code> if you switch from one to another dimension in order to overwrite the dimension value.</p>
+
+<h3 id="debug-vs-release-mode" class="clickable-header">Debug vs Release mode<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#debug-vs-release-mode" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>You can switch between debug and release mode using <code class="language-plaintext highlighter-rouge">make debug</code> or <code class="language-plaintext highlighter-rouge">make release</code>. By default, programs are built in release mode.</p>
+
+<h2 id="next-steps" class="clickable-header top-level-header">Next steps<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="https://precice.org/adapter-dealii-get.html#next-steps" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2><i class="icon-arrow-up back-to-top"> </i>
+
+<p>To run the deal.II codes, copy the parameter file (<code class="language-plaintext highlighter-rouge">parameters.prm</code>) into your target directory, e.g. <code class="language-plaintext highlighter-rouge">solid-dealii/</code>. Afterwards, run the executable as</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./elasticity path/to/parameters.prm
+</code></pre></div></div>
+
+<p>Example cases can be found in our <a href="https://precice.org/tutorials.html">FSI tutorial cases</a>.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> 
+The deal.II related examples have already a pre-configured parameter file, so that the parameter file doesn’t need to be copied.
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+</div>
+
+
+                        <hr class="faded">
+                        <footer>
+	<div class="row text-center">
+
+		 Site last generated: Apr 1, 2022 <br>
+
+		<a class="no-icon" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+			<img alt="Creative Commons License" src="./Get the deal.II adapter _ preCICE - The Coupling Library_files/licensebutton-by-40_88x31.png">
+		</a>
+		<br>
+		This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+	</div>
+
+</footer>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+            <!-- /.container -->
+            </div>
+        <!-- /#main -->
+        </div>
+    </main>
+
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
