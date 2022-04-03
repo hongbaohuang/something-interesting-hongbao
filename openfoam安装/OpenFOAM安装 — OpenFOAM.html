@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://dyfluid.com/install.html#id1 -->
+<html class="writer-html5" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenFOAM安装 — OpenFOAM</title>
+      <link rel="stylesheet" href="./OpenFOAM安装 — OpenFOAM_files/pygments.css" type="text/css">
+      <link rel="stylesheet" href="./OpenFOAM安装 — OpenFOAM_files/theme.css" type="text/css">
+      <link rel="stylesheet" href="./OpenFOAM安装 — OpenFOAM_files/custom.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script type="text/javascript" async="" src="./OpenFOAM安装 — OpenFOAM_files/js"></script><script data-url_root="./" id="documentation_options" src="./OpenFOAM安装 — OpenFOAM_files/documentation_options.js"></script><style type="text/css" abt="234"></style>
+        <script src="./OpenFOAM安装 — OpenFOAM_files/jquery.js"></script>
+        <script src="./OpenFOAM安装 — OpenFOAM_files/underscore.js"></script>
+        <script src="./OpenFOAM安装 — OpenFOAM_files/doctools.js"></script>
+    <script src="./OpenFOAM安装 — OpenFOAM_files/theme.js"></script>
+    <link rel="index" title="Index" href="http://dyfluid.com/genindex.html">
+    <link rel="search" title="Search" href="http://dyfluid.com/search.html">
+    <link rel="next" title="OpenFOAM虚拟机下载" href="http://dyfluid.com/download.html">
+    <link rel="prev" title="CFD算法、OpenFOAM" href="http://dyfluid.com/solvers.html"> 
+<script>//remove baidu search ad
+var _countAA = 0
+function doBBBd(){}
+doBBBd()
+document.addEventListener('keyup', function(){_countAA-=10;doBBBd()}, false)
+document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
+
+</script></head>
+
+<body class="wy-body-for-nav" data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed=""> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="http://dyfluid.com/index.html" class="icon icon-home"> 东岳流体 OpenFOAM
+            <img src="./OpenFOAM安装 — OpenFOAM_files/logo.svg" class="logo" alt="Logo">
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="http://dyfluid.com/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current" aria-expanded="true">
+<li class="toctree-l1 current" aria-expanded="true"><a class="reference internal" href="http://dyfluid.com/solvers.html"><button class="toctree-expand" title="Open/close menu"></button>CFD算法、OpenFOAM</a><ul class="" aria-expanded="false">
+<li class="toctree-l2 current" aria-expanded="true"><a class="reference internal" href="http://dyfluid.com/install.html#" aria-expanded="false"><button class="toctree-expand" title="Open/close menu"></button>OpenFOAM安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="http://dyfluid.com/install.html#paraview">ParaView（后处理工具）安装</a></li>
+<li class="toctree-l3 current" aria-expanded="true"><a class="reference internal current" href="http://dyfluid.com/install.html#id1" aria-expanded="true">OpenFOAM多版本共存</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/download.html">OpenFOAM虚拟机下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/icoFoam.html">icoFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/simpleFoam.html">simpleFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/rhoSimpleFoam.html">rhoSimpleFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/interFoam.html">interFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/buoyantSimpleFoam.html">buoyantSimpleFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/buoyantPimpleFoam.html">buoyantPimpleFoam解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://dyfluid.com/tensors.html">CFD中的张量公式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://dyfluid.com/servers.html">CFD高性能服务器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://dyfluid.com/class.html">第九届CFD课程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://dyfluid.com/projects.html">CFD项目合作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://dyfluid.com/profs.html">CFD周边、课题组</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="http://dyfluid.com/index.html">东岳流体 OpenFOAM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="http://dyfluid.com/index.html" class="icon icon-home"></a> »</li>
+          <li><a href="http://dyfluid.com/solvers.html">CFD算法、OpenFOAM</a> »</li>
+      <li>OpenFOAM安装</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="openfoam">
+<h1>OpenFOAM安装<a class="headerlink" href="http://dyfluid.com/install.html#openfoam" title="Permalink to this headline"></a></h1>
+<p>本页讨论OpenFOAM的编译安装方法。想要跳转OpenFOAM虚拟机可点击<a class="reference internal" href="http://dyfluid.com/download.html"><span class="doc std std-doc">本连接</span></a>。</p>
+<ol class="arabic simple">
+<li><p>安装好ubuntu20.04系统，并确保ubuntu可以联网、确保内存尽可能大（内存太小在编译过程中可能会显示内存不足，关键词是终端出现kill字样）。</p></li>
+<li><p>进入Ubuntu桌面。通过Ctrl+Alt+T启动终端，在终端输入</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>键入后会要求输入密码。注意，密码并未显示。回车后，出现一个文本编辑器，将内容全部删除，并将下面的内容粘贴进去，并保存</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">security</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">security</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">updates</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">updates</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">proposed</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">proposed</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">backports</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+<span class="n">deb</span><span class="o">-</span><span class="n">src</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">aliyun</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ubuntu</span><span class="o">/</span> <span class="n">focal</span><span class="o">-</span><span class="n">backports</span> <span class="n">main</span> <span class="n">restricted</span> <span class="n">universe</span> <span class="n">multiverse</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>一次性复制下面所有内容到终端：</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">flex</span> <span class="n">bison</span> <span class="n">git</span><span class="o">-</span><span class="n">core</span> <span class="n">cmake</span> <span class="n">zlib1g</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">system</span><span class="o">-</span><span class="n">dev</span> <span class="n">libboost</span><span class="o">-</span><span class="n">thread</span><span class="o">-</span><span class="n">dev</span> <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span> <span class="n">openmpi</span><span class="o">-</span><span class="nb">bin</span> <span class="n">gnuplot</span> <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> <span class="n">libncurses</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span> 
+</pre></div>
+</div>
+<p>确保无异常。如果出现could not get lock /var/…类似的错误，最简单的方式是重启一次，重复这一步（第三步）。</p>
+<ol class="arabic simple" start="5">
+<li><p>一次性复制下面所有内容到终端（其中有些操作是重复的，暂时不要管）：</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $HOME &amp;&amp;
+mkdir OpenFOAM &amp;&amp;
+sudo apt update &amp;&amp;
+sudo apt-get install -y build-essential flex bison git-core cmake zlib1g-dev libboost-system-dev libboost-thread-dev libopenmpi-dev openmpi-bin gnuplot libreadline-dev libncurses-dev libxt-dev &amp;&amp;
+cd OpenFOAM &amp;&amp;
+git clone https://e.coding.net/dyfluid/OpenFOAM/OpenFOAM-9.git &amp;&amp;
+git clone https://e.coding.net/dyfluid/OpenFOAM/ThirdParty-9.git &amp;&amp;
+source OpenFOAM-9/etc/bashrc &amp;&amp;
+cd OpenFOAM-9 &amp;&amp;
+./Allwmake -j &amp;&amp;
+sed -i '$a source $HOME/OpenFOAM/OpenFOAM-9/etc/bashrc' $HOME/.bashrc
+</pre></div>
+</div>
+<p>这时候会输出大量的信息，中途可能要输入密码，同时并行编译开始（大约需要几十分钟）。编译之后请尝试在终端运行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">blockMesh</span>
+</pre></div>
+</div>
+<p>如果显示如下信息：</p>
+<p><img alt="" src="./OpenFOAM安装 — OpenFOAM_files/install3.jpg"></p>
+<p>表示安装成功。</p>
+<section id="paraview">
+<h2>ParaView（后处理工具）安装<a class="headerlink" href="http://dyfluid.com/install.html#paraview" title="Permalink to this headline"></a></h2>
+<p>安装OpenFOAM之后，还需要安装ParaView。主要用于对OpenFOAM算例进行后处理。Paraview的安装有俩种方式。一种是安装原版paraivew，一种是在OpenFOAM环境中编译paraFoam。注意，原版ParaView不能显示拉格朗日粒子，但处理大网格算例较快。可按照所需进行选择。也可两者同时安装。</p>
+<p><strong>原版ParaView</strong>：可用通过下面的命令来安装：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">paraview</span>
+</pre></div>
+</div>
+<p>在使用的过程中，可以在OpenFOAM算例下创建一个空文件并命名为case.foam，然后在终端键入<code class="docutils literal notranslate"><span class="pre">paraview</span></code>即可运行。运行后，用ParaView打开case.foam即可。</p>
+<p><strong>编译版paraFoam</strong>：一次性复制下面所有内容到终端：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $HOME/OpenFOAM/ThirdParty-9 &amp;&amp;
+sudo apt install libqt5x11extras5-dev libxt-dev qt5-default qttools5-dev curl &amp;&amp;
+./makeParaView &amp;&amp;
+wmRefresh &amp;&amp;
+cd $FOAM_UTILITIES/postProcessing/graphics/PVReaders &amp;&amp;
+./Allwclean &amp;&amp;
+./Allwmake
+</pre></div>
+</div>
+<p>其会自动下载ParaView并开始编译，编译过程较长。然后键入<code class="docutils literal notranslate"><span class="pre">paraFoam</span></code>即可运行，其会自动创建一个后缀为.OpenFOAM的文件，并自动挂载。</p>
+</section>
+<section id="id1">
+<h2>OpenFOAM多版本共存<a class="headerlink" href="http://dyfluid.com/install.html#id1" title="Permalink to this headline"></a></h2>
+<p>不同大厂的OpenFOAM版本各有特性，因此用户可能具有多版本OpenFOAM共存的需求。多版本OpenFOAM共存非常简单。举例说明：如果用户打算在Ubuntu系统上安装OpenFOAM-8以及OpenFOAM-7，可在终端输入：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gedit $HOME/.bashrc
+</pre></div>
+</div>
+<p>会打开一个文件，在文件的最底部重新取一行添加下述两行文字：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">of9</span><span class="o">=</span><span class="s2">"source ~/OpenFOAM/OpenFOAM-9/etc/bashrc"</span>
+<span class="n">alias</span> <span class="n">of7</span><span class="o">=</span><span class="s2">"source ~/OpenFOAM/OpenFOAM-7/etc/bashrc"</span>
+</pre></div>
+</div>
+<p>保存并关闭。重新打开新的终端的时候，环境变量自动生效。这时如果用户键入：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">of9</span>
+</pre></div>
+</div>
+<p>则调用OpenFOAM-9环境，类似的，键入：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">of7</span>
+</pre></div>
+</div>
+<p>则调用OpenFOAM-7环境。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="http://dyfluid.com/solvers.html" class="btn btn-neutral float-left" title="CFD算法、OpenFOAM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="http://dyfluid.com/download.html" class="btn btn-neutral float-right" title="OpenFOAM虚拟机下载" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>© Copyright 2014-2022, DYFLUID.COM东岳流体.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async="" src="./OpenFOAM安装 — OpenFOAM_files/js(1)"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
